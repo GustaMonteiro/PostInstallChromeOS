@@ -28,6 +28,17 @@ LISTA_PROGRAMAS_APT=(
   doxygen
   pip
   kitty
+  libfreetype6-dev
+  libfontconfig1-dev
+  libxcb-xfixes0-dev
+  libxkbcommon-dev
+)
+
+LISTA_PACOTES_CARGO=(
+  exa
+  git-delta
+  bat
+  alacritty
 )
 
 LISTA_MAPPINGS=(
@@ -61,6 +72,10 @@ rust_e_diretorios () {
 
 instalar_pacotes_apt () {
   sudo apt install ${LISTA_PROGRAMAS_APT[@]} -y
+}
+
+instalar_pacotes_cargo () {
+  cargo install ${LISTA_PACOTES_CARGO[@]} 
 }
 
 instalar_fonte () {
@@ -97,6 +112,7 @@ escrever_mappings () {
 atualizar_tudo
 rust_e_diretorios
 instalar_pacotes_apt
+instalar_pacotes_cargo
 instalar_fonte
 instalar
 escrever_mappings
